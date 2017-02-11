@@ -29,7 +29,7 @@ public:
 
   // Bonus
   PacString& operator+=(const PacString &rcData);
-  //PacString operator+(const PacString &rcData) const;
+  PacString operator+(const PacString &rcData) const;
 
 private:
   char *mpszData = nullptr;

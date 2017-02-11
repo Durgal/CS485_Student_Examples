@@ -17,12 +17,11 @@ int main ()
 {
 //  _CrtSetDbgFlag (_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
-	PacString s1;
-	s1= "Hello!";
+  PacString s1;
+  s1 = "Hello!";
 
-  std::cout << "s1:" << s1 << std::endl;
+  std::cout << "s1: " << s1 << std::endl;
 
-  /*
   PacString s2 ("World");
   std::cout << "s2: " << s2 << std::endl;
 
@@ -32,23 +31,31 @@ int main ()
 
   std::cout << "s3: " << s3 << std::endl;
 
+  // TODO: += op doesnt work quite correctly
+  // output should be... "Hello!WorldHello!World!!"
   s3 += (s3 + "!!");
 
   std::cout << "s3: " << s3 << std::endl;
+  //
 
-  // */
 
-  // TODO:
+  // dynamically allocate the PacString object using pcDynString
   PacString *pcDynString;
 
-  // dynamically allocate the PacString object using
-  // pcDynString.
-  // Assign "CS485" to pcDynString.
-  // Display pcDynString.
-  // concatenate " is the best!" on to
-  // pcDynString
-  // Display pcDynString.
+  // Assign "CS485" to pcDynString
+  pcDynString = new PacString("CS485");
+
+  // Display pcDynString
+  std::cout << *pcDynString << '\n';
+
+  // concatenate " is the best!" on to pcDynString
+  *pcDynString += " is the best!\n";
+
+  // Display pcDynString
+  std::cout << *pcDynString;
+
   // deallocate the object pcDynString 
+  delete pcDynString;
 
   return EXIT_SUCCESS;
 }
