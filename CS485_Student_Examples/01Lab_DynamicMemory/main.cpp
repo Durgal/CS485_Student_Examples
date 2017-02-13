@@ -1,6 +1,6 @@
 //***************************************************************************
 // File name:  main.cpp
-// Author:     Chadd Williams
+// Author:     Chadd Williams, Chris Granat, Kyle Petska
 // Date:       2/3/2017
 // Class:      CS485
 // Assignment: Dynamic Memory Lab
@@ -31,12 +31,9 @@ int main ()
 
   std::cout << "s3: " << s3 << std::endl;
 
-  // TODO: += op doesnt work quite correctly
-  // output should be... "Hello!WorldHello!World!!"
   s3 += (s3 + "!!");
 
   std::cout << "s3: " << s3 << std::endl;
-  //
 
 
   // dynamically allocate the PacString object using pcDynString
