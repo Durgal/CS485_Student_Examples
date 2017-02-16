@@ -38,11 +38,12 @@ PacString::PacString()
 //***************************************************************************
 PacString::PacString(const char * pszString)
 {
-	mpszData = new char[strlen(pszString)];
+	mpszData = new char[strlen(pszString) + 1];
 
 	if (nullptr != pszString)
 	{
 		strcpy(mpszData, pszString);
+		mpszData[strlen(pszString)] = '\0';
 	}
 }
 
@@ -57,9 +58,12 @@ PacString::PacString(const char * pszString)
 //***************************************************************************
 PacString::PacString(const PacString & rcData)
 {
+	mpszData = new char[strlen(rcData.mpszData) + 1];
+
 	if (nullptr != rcData.mpszData)
 	{
-		mpszData = rcData.mpszData;
+		strcpy(mpszData, rcData.mpszData);
+		mpszData[strlen(rcData.mpszData)] = '\0';
 	}
 }
 
@@ -76,7 +80,7 @@ PacString::~PacString()
 {
 	if (nullptr != mpszData)
 	{
-		//delete mpszData; // memory leaks :c
+		delete [] mpszData;
 	}
 }
 
@@ -90,9 +94,9 @@ PacString::~PacString()
 // Returned:    the instance
 //***************************************************************************
 /*
-PacString& PacString::operator=(const PacString &rcData)
+PacString & PacString::operator=(const PacString &rcData)
 {
-	mpszData = new char[strlen(rcData.mpszData)];
+	mpszData = new char[strlen(rcData.mpszData) + 1];
 
 	strcpy(mpszData, rcData.mpszData);
 
@@ -131,7 +135,16 @@ PacString & PacString::operator=(PacString rcData)
 //***************************************************************************
 PacString & PacString::operator+=(const PacString & rcData)
 {
-	strcat(mpszData, rcData.mpszData);
+	PacString temp;
+	int size = strlen(this->mpszData) + strlen(rcData.mpszData) + 1;
+
+	temp.mpszData = new char[size];
+
+	strncpy_s(temp.mpszData, size, this->mpszData, strlen(this->mpszData) + 1);
+
+	strcat_s(temp.mpszData, size, rcData.mpszData);
+
+	*this = temp;
 
 	return *this;
 }
@@ -147,11 +160,11 @@ PacString & PacString::operator+=(const PacString & rcData)
 //***************************************************************************
 PacString PacString::operator+(const PacString & rcData) const
 {
-	char * newString = strcat(mpszData, rcData.mpszData);
+	PacString temp = *this;
 
-	PacString pcPacString(newString);
+	temp += rcData;
 
-	return pcPacString;
+	return temp;
 }
 
 //***************************************************************************
@@ -168,10 +181,7 @@ std::ostream & operator<<(std::ostream & out, const PacString & rcData)
 {
 	if (nullptr != rcData.mpszData)
 	{
-		for (int i = 0; i < strlen(rcData.mpszData); i++)
-		{ 
-			out << *(rcData.mpszData + i);
-		}
+		out << rcData.mpszData;
 	}
 	else
 	{

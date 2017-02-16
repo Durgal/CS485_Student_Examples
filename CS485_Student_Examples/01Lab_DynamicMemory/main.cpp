@@ -8,14 +8,14 @@
 //***************************************************************************
 
 #define MEM_DEBUG
-// #include "mem_debug.h"
+#include "mem_debug.h"
 
 #include <iostream>
 #include "PacString.h"
 
 int main ()
 {
-//  _CrtSetDbgFlag (_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+  _CrtSetDbgFlag (_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
   PacString s1;
   s1 = "Hello!";
@@ -31,10 +31,13 @@ int main ()
 
   std::cout << "s3: " << s3 << std::endl;
 
+	//*
+
   s3 += (s3 + "!!");
 
   std::cout << "s3: " << s3 << std::endl;
 
+	
 
   // dynamically allocate the PacString object using pcDynString
   PacString *pcDynString;
@@ -53,6 +56,8 @@ int main ()
 
   // deallocate the object pcDynString 
   delete pcDynString;
+
+	// */
 
   return EXIT_SUCCESS;
 }
