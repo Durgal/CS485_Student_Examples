@@ -26,7 +26,6 @@ public:
   ~ParentNoVirtualDtor ()
   {
     std::cout << "ParentNoVirtualDtor::dtor(" << *mpIntVal << ")\n";
-
     delete mpIntVal;
   }
 

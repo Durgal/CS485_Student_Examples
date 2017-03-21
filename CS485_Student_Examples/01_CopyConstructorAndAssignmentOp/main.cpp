@@ -64,9 +64,9 @@ int main ()
   bigger b3 = b1;
   cout << "end b3\n\n";
 
-  cout << "b6\n";
+  cout << "b4\n";
   bigger b6;
-  cout << "end b6\n\n";
+  cout << "end b4\n\n";
 
   cout << "foo\n";
   foo (b1);
@@ -76,13 +76,13 @@ int main ()
   b6 = bar (b1);
   cout << "end bar\n\n";
 
-  cout << "b7\n";
+  cout << "b5\n";
   bigger b7 = 1;
-  cout << "end b7\n\n";
+  cout << "end b5\n\n";
 
-  cout << "b8\n";
+  cout << "b6\n";
   foo (1);
-  cout << "end b8\n\n";
+  cout << "end b6\n\n";
 
   return EXIT_SUCCESS;
 }

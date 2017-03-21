@@ -31,7 +31,6 @@ public:
     delete mpCharVal;
   }
 
-
 private:
   char* mpCharVal=nullptr;
 };
