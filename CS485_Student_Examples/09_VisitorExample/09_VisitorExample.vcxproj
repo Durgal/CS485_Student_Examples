@@ -153,6 +153,7 @@
     <ClInclude Include="PrintVisitor.h" />
     <ClInclude Include="SalarySumVisitor.h" />
     <ClInclude Include="SimpleContainer.h" />
+    <ClInclude Include="WeirdEmployeeOutputVisitor.h" />
     <ClInclude Include="Worker.h" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +164,7 @@
     <ClCompile Include="PrintVisitor.cpp" />
     <ClCompile Include="SalarySumVisitor.cpp" />
     <ClCompile Include="SimpleContainer.cpp" />
+    <ClCompile Include="WeirdEmployeeOutputVisitor.cpp" />
     <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
