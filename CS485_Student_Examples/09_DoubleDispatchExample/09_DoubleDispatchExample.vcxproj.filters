@@ -15,60 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BonusGiver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleBonusGiver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Employee.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GiveBonusVisitor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IEmployeeVisitor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PrintVisitor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SalarySumVisitor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SimpleContainer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Worker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WeirdEmployeeOutputVisitor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BonusGiver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleBonusGiver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Employee.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GiveBonusVisitor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PrintVisitor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SalarySumVisitor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SimpleContainer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Worker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WeirdEmployeeOutputVisitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

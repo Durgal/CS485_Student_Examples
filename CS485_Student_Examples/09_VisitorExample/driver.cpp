@@ -13,8 +13,9 @@
 #include <iostream>
 #include "SimpleContainer.h"
 #include "SalarySumVisitor.h"
+#include "WeirdEmployeeOutputVisitor.h"
 
-#include "vld.h"
+//#include "vld.h"
 
 //***************************************************************************
 // Function:    main
@@ -34,10 +35,11 @@ int main ()
   PrintVisitor cPrintVisitor(std::cout);
   GiveBonusVisitor cGiveBonusVisitor;
   SalarySumVisitor cSalarySumVisitor;
+  WeirdEmployeeOutputVisitor cWeirdVisitor;
 
-  cTheContainer.addEmployee (new Worker ("Bob", "Bib", 1000000));
+  cTheContainer.addEmployee (new Worker ("Bob", "Bib", 1000001));
   cTheContainer.addEmployee (new Worker ("Sally", "Silly", 1500000));
-  cTheContainer.addEmployee (new Manager ("Jim", "Jam", 2500000));
+  cTheContainer.addEmployee (new Manager ("Jim", "Jam", 2500003));
   cTheContainer.addEmployee (new Manager ("Mable", "Table", 3500000));
 
   std::cout << std::endl;
@@ -51,6 +53,10 @@ int main ()
   std::cout << std::endl;
 
   EmpContainer::applyVisitor (cTheContainer, &cPrintVisitor);
+  std::cout << std::endl;
+  std::cout << std::endl;
+
+  EmpContainer::applyVisitor(cTheContainer, &cWeirdVisitor);
   std::cout << std::endl;
   std::cout << std::endl;
 
