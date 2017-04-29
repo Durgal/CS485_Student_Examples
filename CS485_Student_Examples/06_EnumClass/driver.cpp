@@ -38,9 +38,9 @@ int main ()
 {
   Day today = Day::MON;
 
-  if (4.2 > today) // illegal
+  //if (4.2 > today) // illegal
   {
-    std::cout << DayStr[today]; // illegal
+    //std::cout << DayStr[today]; // illegal
 
     std::cout << DayStr[static_cast<int>(today)]; // legal
     std::cout << std::endl;
@@ -48,9 +48,9 @@ int main ()
     std::cout << DayStr[static_cast<int>(Day::FRI)]; // legal
     std::cout << std::endl;
 
-    std::cout << foo (today); // illegal
-    std::cout << bar (today); // illegal
-    today = TUE; // illegal
+    //std::cout << foo (today); // illegal
+    //std::cout << bar (today); // illegal
+    //today = TUE; // illegal
   }
 
   UnscopedDay tomorrow = tue;

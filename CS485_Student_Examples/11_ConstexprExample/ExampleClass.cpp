@@ -23,6 +23,6 @@
 void ExampleClass::printAll (std::ostream &rcOut) const
 {
   
-  rcOut << "X: " << mX << " Y: " << < mY;;
+  rcOut << "X: " << mX << " Y: " << mY;;
 
 }

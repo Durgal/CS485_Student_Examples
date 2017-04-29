@@ -16,7 +16,7 @@
 #include <functional>
 #include <algorithm>
 #include "ExampleClass.h"
-#include "vld.h"
+//#include "vld.h"
 
 //***************************************************************************
 // Function:    sumThem 

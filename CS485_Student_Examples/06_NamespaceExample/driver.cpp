@@ -58,7 +58,7 @@ int main ()
 {
   outputDef ();
 
-  std::cout << objects; // illegal!
+  //std::cout << objects; // illegal!
 
   std::cout << CS250::objects << std::endl;
 
